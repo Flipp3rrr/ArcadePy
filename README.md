@@ -1,2 +1,2 @@
 # ArcadePy
-A whole suit of retor games, written in Python.
+A lot of arcade games, written in Python.
