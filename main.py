@@ -1,4 +1,11 @@
+#
+# ARCADEPY BY FLIPP3RRR
+#
+# You're free to do whatever you want with this code, it's FREE!
+#
+
 # Imports for launcher
+importsWork = True
 try:
 	import sys
 except:
@@ -37,17 +44,16 @@ else:
 # Get script folder
 base_folder = os.path.dirname(__file__)
 
-# Create root widget
+# Make life easier
 root = tk.Tk()
-
-# Exit script
-def ExitCallback():
-	sys.exit("Thanks for playing!")
 
 # Pong script
 def PongCallback():
 	print("Pong is work in progress! It may not function properly!")
 
+# Exit script
+def ExitCallback():
+	sys.exit("Thanks for playing!")
 
 # Get logo directory
 logo_path = os.path.join(base_folder, "images/PythonLogoTiny.png")
@@ -55,15 +61,13 @@ logo = tk.PhotoImage(file=logo_path)
 
 # Root widget content
 root.title("ArcadePy Launcher")
+root.resizable(0, 0)
 PythonLogoWidget = tk.Label(root, image=logo).pack(side="left")
 DescriptionText = """ArcadePy is a small suite of arcade games written in Python."""
 DescriptionTextWidget = tk.Label(root, justify=tk.LEFT, padx = 10, text=DescriptionText).pack(side="left")
-PongButtonWidget = tk.Button(root, justify=tk.CENTER, text="Play Pong", command=PongCallback).pack(side="bottom")
-ExitButtonWidget = tk.Button(root, justify=tk.CENTER, text="Exit", command=ExitCallback).pack(side="bottom")
+ExitButtonWidget = tk.Button(root, text="Exit", command=ExitCallback).pack(side="bottom")
+PongButtonWidget = tk.Button(root, text="Play Pong", command=PongCallback).pack(side="bottom")
 root.mainloop()
-
-# Make startup screen the correct size
-StartupScreen.pack()
 
 # Show startup screen
 root.mainloop()
