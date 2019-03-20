@@ -67,7 +67,6 @@ DescriptionText = """ArcadePy is a small suite of arcade games written in Python
 DescriptionTextWidget = tk.Label(root, justify=tk.LEFT, padx = 10, text=DescriptionText).pack(side="left")
 ExitButtonWidget = tk.Button(root, text="Exit", command=ExitCallback).pack(side="bottom")
 PongButtonWidget = tk.Button(root, text="Play Pong", command=PongCallback).pack(side="bottom")
-root.mainloop()
 
 # Show startup screen
 root.mainloop()
