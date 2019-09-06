@@ -30,17 +30,6 @@ except:
 if importsWork == False:
 	print("Error: Not importing game dependencies because one or more of the previous imports failed!")
 
-# Imports for games
-else:
-	try:
-		import random
-	except:
-		sys.exit("Error: Couldn't import the random module, is it installed?")
-	try:
-		import time
-	except:
-		sys.exit("Error: Couldn't import the random module, is it installed?")
-
 # Get script folder
 base_folder = os.path.dirname(__file__)
 
