@@ -5,30 +5,32 @@
 #
 
 # Imports for launcher
-importsWork = True
+sysWorks = True
+osWorks = True
 try:
 	import sys
 except:
-	importsWork = False
-	print("Error: Couldn't import the sys module, is it installed?")
+	sysWorks = False
 try:
 	import tkinter as tk
 except:
-	if importsWork == False:
-		print("Error: Couldn't import the tkinter module, is it installed?")
-	else:
-		sys.exit("Error: Couldn't import the tkinter module, is it installed?")
-	importsWork = False
+	sys.exit("Error: Couldn't import the tkinter module, is it installed?")
 try:
 	import os
 except:
-	if importsWork == False:
-		print("Error: Couldn't import the tkinter module, is it installed?")
-	else:
+	osWorks = False
+	if sysWorks == True:
 		sys.exit("Error: Couldn't import the os module, is it installed?")
-	importsWork = False
-if importsWork == False:
-	print("Error: Not importing game dependencies because one or more of the previous imports failed!")
+
+if sysWorks == False:
+	if osWorks == True:
+		os._exit("Error: The SYS isn't imported, this could be happening because Python isn't properly installed.")
+	elif osWorks == False:
+		try:
+			exit("Error: The SYS and OS modules aren't imported, this could be happening because Python isn't properly installed.")
+		except:
+			quit()
+
 
 # Get script folder
 base_folder = os.path.dirname(__file__)
