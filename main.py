@@ -1,7 +1,7 @@
 #
 # ARCADEPY BY FLIPP3RRR
 #
-# You're free to do whatever you want with this code, it's FREE!
+# All code is licensed under the UNLICENSE
 #
 
 # Imports for launcher
@@ -27,10 +27,10 @@ except:
 	else:
 		sys.exit("Error: Couldn't import the os module, is it installed?")
 	importsWork = False
-
-# Imports for games
 if importsWork == False:
 	print("Error: Not importing game dependencies because one or more of the previous imports failed!")
+
+# Imports for games
 else:
 	try:
 		import random
