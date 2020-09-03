@@ -24,10 +24,10 @@ except:
 
 if sysWorks == False:
 	if osWorks == True:
-		os._exit("Error: The SYS isn't imported, this could be happening because Python isn't properly installed.")
+		os._exit("Error: Couldn't import the sys module, is it installed?")
 	elif osWorks == False:
 		try:
-			exit("Error: The SYS and OS modules aren't imported, this could be happening because Python isn't properly installed.")
+			exit("Error: Couldn't import the sys and os modules, are they installed?")
 		except:
 			quit()
 
