@@ -11,8 +11,10 @@ try:
 	import sys
 except:
 	sysWorks = False
+
+import tkinter as tk
 try:
-	import tkinter as tk
+	print()
 except:
 	sys.exit("Error: Couldn't import the tkinter module, is it installed?")
 try:
