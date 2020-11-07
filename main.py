@@ -24,12 +24,12 @@ pong_path = os.path.join(base_folder, "games/pong.py")
 # Make life easier
 root = tk.Tk()
 
-# Pong script
+# Pong
 def PongCallback():
 	print("WARN: Pong is WIP!")
 	exec(open(pong_path).read())
 
-# Exit script
+# Exit
 def ExitCallback():
 	exit()
 
