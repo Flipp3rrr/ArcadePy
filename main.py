@@ -15,6 +15,8 @@ try:
 except:
 	exit("Error: Couldn't import the os module, is it installed?")
 
+import subprocess
+
 # Get script folder
 base_folder = os.path.dirname(__file__)
 
@@ -26,8 +28,7 @@ root = tk.Tk()
 
 # Pong
 def PongCallback():
-	print("WARN: Pong is WIP!")
-	exec(open(pong_path).read())
+	subprocess.call(["python", pong_path])
 
 # Exit
 def ExitCallback():
