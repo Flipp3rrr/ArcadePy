@@ -22,7 +22,7 @@ score = 0
 
 # Quit game
 def quitGame():
-	exit("Game was quit!")
+	exit()
 
 # Ball class
 class Ball:
@@ -105,9 +105,6 @@ canvas = tk.Canvas(root, width=500, height=400, bd=0, highlightthickness=0)
 canvas.pack()
 root.update()
 
-# Ready the game over screen
-gameOverButton = tk.Button(root, text="Quit", command=quitGame)
-
 # Spawn paddle and ball
 paddle = Paddle(canvas, "blue")
 ball = Ball(canvas, "red", paddle)
@@ -118,8 +115,17 @@ while 1:
 		ball.draw()
 		paddle.draw()
 	else:
-		gameOverButton.pack()
-		pass
+		break
 	root.update_idletasks()
 	root.update()
 	time.sleep(0.01)
+
+# Game over text
+gameOverText = "Game over! Your score was %s." % score
+gameOverWidget = tk.Label(root, justify=tk.LEFT, padx = 10, text=gameOverText).pack()
+
+# Quit game button
+gameOverButton = tk.Button(root, text="Quit", command=quitGame).pack()
+
+# Show game over screen
+root.mainloop()
