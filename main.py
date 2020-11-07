@@ -7,6 +7,7 @@
 # Imports for launcher
 sysWorks = True
 osWorks = True
+
 try:
 	import sys
 except:
@@ -33,20 +34,11 @@ if sysWorks == False:
 		except:
 			quit()
 
-try:
-	# Get script folder
-	base_folder = os.path.dirname(__file__)
+# Get script folder
+base_folder = os.path.dirname(__file__)
 
-	# Get needed paths and directories
-	logo_path = os.path.join(base_folder, "images/PythonLogoTiny.png")
-	logo = tk.PhotoImage(file=logo_path)
-except:
-	sys.exit("Error: The launcher doesn't have access to the file system, please run it again as administrator or restart your computer.")
-
-try:
-	pong_path = os.path.join(base_folder, "games/pong.py")
-except:
-	sys.exit("Error: Couldn't get PONG path.")
+# Get needed paths and directories
+pong_path = os.path.join(base_folder, "games/pong.py")
 
 # Make life easier
 root = tk.Tk()
@@ -54,11 +46,14 @@ root = tk.Tk()
 # Pong script
 def PongCallback():
 	print("Pong is work in progress! It may not function properly!")
-	os.system(pong_path)
+	exec(open(pong_path).read())
 
 # Exit script
 def ExitCallback():
 	sys.exit("Thanks for playing!")
+
+logo_path = os.path.join(base_folder, "images/PythonLogoTiny.png")
+logo = tk.PhotoImage(file=logo_path)
 
 # Root widget content
 root.title("ArcadePy Launcher")

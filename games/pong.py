@@ -24,4 +24,6 @@ try:
 	import random
 	import time
 except:
-	sys.exit("Fatal error: One or more default imports failed, this could be happening because Python isn't properly installed.")
+	sys.exit("Fatal error: One or more imports failed, this could be happening because Python isn't properly installed.")
+
+print("Success!")
