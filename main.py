@@ -4,35 +4,16 @@
 # All code is licensed under the UNLICENSE
 #
 
-# Imports for launcher
-sysWorks = True
-osWorks = True
-
+# Imports
 try:
-	import sys
+	import tkinter as tk
 except:
-	sysWorks = False
+	exit("Fatal error: One or more imports failed, this could be happening because Python isn't properly installed.")
 
-import tkinter as tk
-try:
-	print()
-except:
-	sys.exit("Error: Couldn't import the tkinter module, is it installed?")
 try:
 	import os
 except:
-	osWorks = False
-	if sysWorks == True:
-		sys.exit("Error: Couldn't import the os module, is it installed?")
-
-if sysWorks == False:
-	if osWorks == True:
-		os._exit("Error: Couldn't import the sys module, is it installed?")
-	elif osWorks == False:
-		try:
-			exit("Error: Couldn't import the sys and os modules, are they installed?")
-		except:
-			quit()
+	exit("Error: Couldn't import the os module, is it installed?")
 
 # Get script folder
 base_folder = os.path.dirname(__file__)
@@ -45,12 +26,12 @@ root = tk.Tk()
 
 # Pong script
 def PongCallback():
-	print("Pong is work in progress! It may not function properly!")
+	print("WARN: Pong is WIP!")
 	exec(open(pong_path).read())
 
 # Exit script
 def ExitCallback():
-	sys.exit("Thanks for playing!")
+	exit()
 
 logo_path = os.path.join(base_folder, "images/PythonLogoTiny.png")
 logo = tk.PhotoImage(file=logo_path)
