@@ -1,2 +1,2 @@
 # ArcadePy
-A lot of arcade games, written in Python.
+A bunch of arcade games, written in Python.
